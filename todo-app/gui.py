@@ -8,15 +8,36 @@ fsg.theme("DarkBlue14")
 
 # current_time = time.localtime()
 # today = time.strftime("%A, %B %d, %Y", current_time)
+
+#labels
 clock_widget = fsg.Text("", key="clock")
 label = fsg.Text("Type in a To-do")
 input_box = fsg.InputText(tooltip="Type in a To-do", key="TODO")
-add_button = fsg.Button("Add")
 list_box = fsg.Listbox(values=functions.get_todo(), key="todos_list",
                        enable_events=True, size=(50, 10))
-edit_button = fsg.Button("Edit")
-complete_button = fsg.Button("Complete")
-exit_button = fsg.Button("Exit")
+#buttons
+add_button = fsg.Button(key="Add",
+    image_source="buttons_img/add.png",
+    image_size=(32, 32),
+    mouseover_colors="LightBlue2",
+    tooltip="Add Task")
+edit_button = fsg.Button(key="Edit",
+    image_source="buttons_img/edit-button.png",
+    image_size=(32, 32),
+    mouseover_colors="LightBlue2",
+    tooltip="Edit Task")
+complete_button = fsg.Button( key="Complete",
+    image_source="buttons_img/complete.png",
+    image_size=(32, 32),
+    mouseover_colors="LightBlue2",
+    tooltip="Complete Task")
+exit_button = fsg.Button(key="Exit",
+    image_source="buttons_img/logout.png",
+    image_size=(32, 32),
+    mouseover_colors="LightBlue2",
+    tooltip="Exit Application")
+
+#display window
 window = fsg.Window("My To-do App",
                     layout=[[clock_widget],
                             [label], [input_box], [add_button, edit_button, complete_button],
